@@ -1,0 +1,24 @@
+openapi: 3.0.0
+info:
+  title: Corona Virus Kenya Statistics
+  description: Corona Virus Kenya Statistics
+  version: 0.1.9
+servers:
+  - url: http://kenyacovid.azurewebsites.net/
+    description: Main server
+  - url: http://127.0.0.1:5000/
+    description: Testing server at local computer
+paths:
+  /kenya:
+    get:
+      summary: Obtain realtime corona virus statistics of kenya.
+      description: obtain realtime corona virus statistics of kenya
+      responses:
+        '200':    # status code
+          description: A JSON file for kenya data at the current date
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  type: string
